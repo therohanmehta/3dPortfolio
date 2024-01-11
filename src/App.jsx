@@ -1,22 +1,20 @@
-
+"use client";
 import { Canvas } from "@react-three/fiber";
 import Experience from "./components/Experience";
-import { Stars } from '@react-three/drei';
+import { Stars, Environment } from "@react-three/drei";
 import { Suspense } from "react";
 
 function App() {
   return (
     <>
-      <Canvas shadows camera={{ position: [0,0,10], fov: 30 }}>
-        <color attach="background" args={["#211d1d"]} />
-        <Experience  />
+      <Canvas shadows camera={{ position: [0, 0, 30], fov: 30 }}>
+        <color attach="background" args={["#211d1e"]} />
+        <Experience />
         <Suspense>
-         
-          <Stars />
-        
-     
-        </Suspense>   
+          {/* <Stars /> */}
 
+          {/* <Environment preset="Sunset" /> */}
+        </Suspense>
       </Canvas>
     </>
   );
