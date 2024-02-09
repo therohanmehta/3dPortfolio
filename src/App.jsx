@@ -13,7 +13,7 @@ function App() {
         <Suspense>
           {/* <Stars /> */}
 
-          {/* <Environment preset="Sunset" /> */}
+          {/* <Environment preset="sunset" /> */}
         </Suspense>
       </Canvas>
     </>

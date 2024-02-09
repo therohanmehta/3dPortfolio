@@ -6,21 +6,18 @@ export function RohanModel(props) {
   const modelRef = useRef();
   const { nodes, materials } = useGLTF("/models/model.glb");
 
-  const { animations: blockAnimation } = useFBX("/animations/Block.fbx");
-  blockAnimation[0].name = "Block";
+  const { animations: danceAnimation } = useFBX("/animations/Dancing.fbx");
+  danceAnimation[0].name = "Dance";
 
-  const { actions } = useAnimations(blockAnimation, modelRef);
-
+  const { actions } = useAnimations(danceAnimation, modelRef);
   useEffect(() => {
-    // actions["Block"].reset().play();
-    // console.log(actions["Block"])
-    console.log(blockAnimation[0]);
+    actions["Dance"].reset().play();
+    modelRef.current.rotation.x -= 2;
   });
 
   useFrame(() => {
     modelRef.current.rotation.y += 0.03;
-        actions["Block"].reset().play();
-
+    // actions["Block"].reset().play();
     // scene.current.rotation.x += 0.04;
     // scene.current.scale.x +=0.1
     // scene.current.scale.y +=0.1

@@ -1,6 +1,7 @@
 import { Environment, OrbitControls } from "@react-three/drei";
 import { RohanModel } from "./RohanModel";
 import { useRef, useState } from "react";
+import { Model1 } from "./Model1";
 
 function Experience() {
   const groupRef = useRef();
@@ -25,15 +26,17 @@ function Experience() {
   return (
     <>
       <OrbitControls />
+      <OrbitControls />
       <group
         ref={groupRef}
-        position={[1, -1, 0]}
+        position={[0, -1, 0]}
         onClick={() => console.log("Clicked")} // Handle click event if needed
         onWheel={handleScroll}
       >
         {/* <Rohan /> */}
         {/* <Model /> */}
-        <RohanModel/>
+        <RohanModel />
+        {/* <Model1 /> */}
       </group>
       {/* <directionalLight
         position={[-100, -200, 500]}
